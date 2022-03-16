@@ -25,7 +25,7 @@ export const axiosInstance = axios.create({
 export function registerUser(data: RegisterData) {
   return axios({
     method: "post",
-    url: "http://localhost:3003/user",
+    url: `${process.env.REACT_APP_API_URL}user`,
     data,
   })
 }
@@ -33,7 +33,7 @@ export function registerUser(data: RegisterData) {
 export function login(data: LoginData) {
   return axios({
     method: "post",
-    url: "http://localhost:3003/auth",
+    url: `${process.env.REACT_APP_API_URL}auth`,
     data,
   })
 }
@@ -44,7 +44,7 @@ export function getCharacters(
 ) {
   return axios({
     method: "get",
-    url: `http://localhost:3003/characters?page=${page}`,
+    url: `${process.env.REACT_APP_API_URL}characters?page=${page}`,
     headers: { Authorization: `Bearer ${token}` },
   })
 }
